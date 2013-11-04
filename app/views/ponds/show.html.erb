@@ -1,6 +1,12 @@
 <h1><%= @pond.name %> Pond</h1>
 <p>water type: <%= @pond.water_type %></p>
 <p>Resident frogs and their tadpoles:</p>
+<p><i>coming soon...</i></p>
+
+<%= link_to "Back", ponds_path %> | 
+<a href="/ponds/<%= @pond.id %>/edit">Edit</a> |
+<a href="/ponds/<%= @pond.id %>/destroy">Delete</a>
+
 <% if false %>
   <ol>
   <% @pond.frogs.each do |frog| %>

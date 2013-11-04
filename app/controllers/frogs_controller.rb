@@ -1,19 +1,21 @@
-class PondsController < ApplicationController
+class FrogsController < ApplicationController
 
   def index
-    @ponds = Pond.all
+    @frogs = Frog.all
   end
 
   def create
-    @pond = Pond.create(
-      :name => params[:pond][:name], 
-      :water_type => params[:pond][:water_type]
+    @frog = Frog.create(
+      :name => params[:frog][:name], 
+      :color => params[:frog][:color],
+      :pond_id => params[:frog][:pond_id]
       )
-    redirect_to ponds_path
+    redirect_to frogs_path
   end
 
   def new
-    @pond = Pond.new
+    @ponds = Pond.all
+    @frog = Frog.new
   end
 
   def show

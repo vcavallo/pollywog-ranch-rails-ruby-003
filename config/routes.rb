@@ -1,9 +1,13 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
 
-  get '/ponds' => 'ponds#index'
-  post '/ponds' => 'ponds#create'
-  get '/ponds/new' => 'ponds#new'
-  get '/ponds/:id' => 'ponds#show'
+  resources :ponds, :frogs, :tadpoles
+
+  # get '/ponds' => 'ponds#index'
+  # post '/ponds' => 'ponds#create'
+  # get '/ponds/new' => 'ponds#new'
+  # get '/ponds/:id' => 'ponds#show'
+  # get '/ponds/:id/edit' => 'ponds#edit'
+  # post '/ponds/:id/update' => 'ponds#update' 
 
 
 

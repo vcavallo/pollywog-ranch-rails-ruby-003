@@ -1,0 +1,6 @@
+<%= form_for @frog do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :color %>
+  <%= f.select :pond_id, Pond.all.collect {|pond| [pond.name]} %>
+  <%= f.submit %>
+<% end %>
