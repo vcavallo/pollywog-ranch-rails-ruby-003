@@ -24,4 +24,36 @@ class TadpolesController < ApplicationController
     @tadpole = Tadpole.find(params[:id])
   end
 
+  def edit
+    @tadpole = Tadpole.find(params[:id])
+  end
+
+  def update
+    @tadpole = Tadpole.find(params[:id])
+    @tadpole.update(
+      :name => params[:tadpole][:name],
+      :color => params[:tadpole][:color]
+    )
+    redirect_to tadpoles_path
+  end
+
+  def destroy
+    @tadpole = Tadpole.find(params[:id])
+    @tadpole.destroy
+    redirect_to tadpoles_path
+  end
+
+  def evolve
+    @tadpole = Tadpole.find(params[:id])
+
+    @frog = Frog.create(
+      :name => @tadpole.name,
+      :color => @tadpole.color,
+      :pond_id => @tadpole.frog.pond_id     
+    )
+
+    @tadpole.destroy
+    redirect_to frogs_path
+  end
+
 end

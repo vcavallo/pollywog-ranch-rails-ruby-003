@@ -6,7 +6,7 @@
     <li>Frog: <a href="/frogs/<%= frog.id %>"><%= frog.name %></a></li>
       <ol>
         <% frog.tadpoles.each do |tadpole| %>
-          <li>Tadpole: <a href="/tadpoles/<%= tadpole.id %>"<%= tadpole.name %></a></li>
+          <li>Tadpole: <a href="/tadpoles/<%= tadpole.id %>"><%= tadpole.name %></a></li>
         <% end %>
       </ol>
     </li>

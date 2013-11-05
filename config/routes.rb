@@ -4,7 +4,9 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   get '/ponds/:id/destroy' => 'ponds#destroy'
   get '/frogs/:id/destroy' => 'frogs#destroy'
   get '/frogs/:id/tadpoles/new' => 'tadpoles#new'
-
+  get '/tadpoles/:id/destroy' => 'tadpoles#destroy'
+  get '/tadpoles/:id/evolve' => 'tadpoles#evolve'
+  
   # get '/ponds' => 'ponds#index'
   # post '/ponds' => 'ponds#create'
   # get '/ponds/new' => 'ponds#new'
