@@ -1,25 +1,18 @@
 <h1><%= @pond.name %> Pond</h1>
 <p>water type: <%= @pond.water_type %></p>
 <p>Resident frogs and their tadpoles:</p>
-<p><i>coming soon...</i></p>
-
-<%= link_to "Back", ponds_path %> | 
-<a href="/ponds/<%= @pond.id %>/edit">Edit</a> |
-<a href="/ponds/<%= @pond.id %>/destroy">Delete</a>
-
-<% if false %>
-  <ol>
+<ol>
   <% @pond.frogs.each do |frog| %>
-    <li><a href="/frogs/<%= frog.id %>"><%= frog.name %> frog</a>
+    <li>Frog: <a href="/frogs/<%= frog.id %>"><%= frog.name %></a></li>
       <ol>
         <% frog.tadpoles.each do |tadpole| %>
-          <li><a href="/tadpoles/<%= tadpole.id %>"><%= tadpole.name %> tadpole</a></li>
+          <li>Tadpole: <a href="/tadpoles/<%= tadpole.id %>"<%= tadpole.name %></a></li>
         <% end %>
       </ol>
     </li>
   <% end %>
-  </ol>
-  <a href="/ponds">Back</a> | 
-  <a href="/ponds/<%= @pond.id %>/edit">Edit</a> | 
-  <a href="/ponds/<%= @pond.id %>/destroy">Delete</a>
-<% end %>
+</ol>
+
+<%= link_to "Back", ponds_path %> | 
+<a href="/ponds/<%= @pond.id %>/edit">Edit</a> |
+<a href="/ponds/<%= @pond.id %>/destroy">Delete</a>

@@ -9,7 +9,7 @@ class FrogsController < ApplicationController
       :name => params[:frog][:name], 
       :color => params[:frog][:color],
       :pond_id => params[:frog][:pond_id]
-      )
+    )
     redirect_to frogs_path
   end
 
@@ -19,17 +19,25 @@ class FrogsController < ApplicationController
   end
 
   def show
-    @pond = Pond.find(params[:id])
+    @frog = Frog.find(params[:id])
+    @pond = Pond.find(@frog.pond_id)
   end
 
   def edit
-    @pond = Pond.find(params[:id])
+    @frog = Frog.find(params[:id])
   end
 
   def update
-    @pond = Pond.find(params[:id])
-    @pond.update(:name => params[:pond][:name], :water_type => params[:pond][:water_type])
-    redirect_to ponds_path
+    @frog = Frog.find(params[:id])
+    @frog.update(:name => params[:frog][:name], :color => params[:frog][:color])
+    redirect_to frogs_path
   end
+
+  def destroy
+    @frog = Frog.find(params[:id])
+    @frog.destroy
+    redirect_to frogs_path
+  end
+
 
 end

@@ -1,0 +1,6 @@
+<%= form_for @tadpole do |f| %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field(:frog, :color) %>
+  <%= f.hidden_field(:frog, :id) %>
+  <%= f.submit %>
+<% end %>

@@ -30,4 +30,10 @@ class PondsController < ApplicationController
     redirect_to ponds_path
   end
 
+  def destroy
+    @pond = Pond.find(params[:id])
+    @pond.destroy
+    redirect_to ponds_path
+  end
+
 end
